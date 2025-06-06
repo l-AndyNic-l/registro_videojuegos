@@ -13,10 +13,31 @@ while True:
     opcion = input( "Selcciones una opción (1-5): " )
 
     if opcion == "1":
-        codigo = int( input( "Ingrese el codigo del videojuego: " ) )
-        nombre = input( "Ingrese el nombre del videojuego: " )
-        genero = input( "Ingrese el género del videojuego: " )
 
+        while True:
+            try:
+                codigo = int( input( "Ingrese el codigo del videojuego: " ) )
+                break
+
+            except:
+                print( "ERROR! Ingrese un codigo válido." )
+
+        while True:
+            try:
+                nombre = input( "Ingrese el nombre del videojuego: " ).strip().title().replace( " ", "" )
+                break
+        
+            except:
+                print( "ERROR! Ingrese un nombre válido." )
+        
+        while True:
+            try:
+                genero = input( "Ingrese el género del videojuego: " ).strip().title().replace( " ", "" )
+                break
+
+            except:
+                print( "ERROR! I" )
+        
         print( "\nPlataformas disponibles: " )
         print( "1) PC" )
         print( "2) PS5" )
@@ -47,7 +68,15 @@ while True:
                 print( f"Código: {v[ 'codigo' ]}, Nombre: {v['nombre']}, Género: {v[ 'genero' ]}, Plataforma: {v[ 'plataforma' ]}" )
 
     elif opcion == "3":
-        codigo = int( input( "Ingrese el código del videojuego a modificar: " ) )
+
+        while True:
+            try:
+                codigo = int( input( "Ingrese el código del videojuego a modificar: " ) )
+                break
+            
+            except:
+                print( "ERROR! Ingrese un codigo válido." )
+
         encontrado = False
 
         for v in videojuegos:
@@ -72,7 +101,14 @@ while True:
             print( "vVideojuego no encontrado." )
 
     elif opcion == "4":
-        codigo = int( input( "Ingrese el código del videojuego a eliminar" ) )
+
+        while True:
+            try:
+                codigo = int( input( "Ingrese el código del videojuego a eliminar" ) )
+                break
+            
+            except:
+                print( "ERROR! Ingrese un codigo válido." )
         eliminado = False
 
         for v in videojuegos:
